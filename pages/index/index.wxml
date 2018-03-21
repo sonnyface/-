@@ -1,0 +1,131 @@
+<!--pages/index/index.wxml-->
+<scroll-view style="height:100vh" class="scroll-view" scroll-y="true" bindscroll="scroll">
+  <view class="container">
+    <!-- 轮播图 -->
+    <view class="swipering">
+      <view class="localtion" bindtap="tolistCity">{{city?city:'......'}}</view>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key>
+          <swiper-item class="lun" bindtap="topingtai" data-index="{{index}}">
+            <image src="{{item.ad_code}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--弹幕  -->
+    <view class="{{scroll_height<'150'?'barrage':'barraging'}}"> 
+      <view class="swipwer" animation="{{animationData}}" >
+        <view bindtap="toDetail" data-id="{{barragelis[0].goods_id}}">
+          {{barragelis[0].user_name}}刚刚领取了{{barragelis[0].goods_name}}
+        </view>
+      </view>
+    </view>
+
+    <!--弹幕  -->
+    <!-- 导航 -->
+    <view class='nav'>
+      <view class='nav_list'>
+        <navigator class='list' url="/pages/jishirenwu/jishirenwu?id=1&title=即时任务&city={{city}}" hover-class="navigator-hover">
+          <view>
+            <image src='http://ozpexz78z.bkt.clouddn.com/pic4.png'></image>
+          </view>
+          <view>即时任务</view>
+        </navigator>
+        <navigator class='list' url="/pages/jishirenwu/jishirenwu?id=2&title=日结任务&city={{city}}" hover-class="navigator-hover">
+          <view>
+            <image src='http://ozpexz78z.bkt.clouddn.com/ri.png'></image>
+          </view>
+          <view>日结任务</view>
+        </navigator>
+        <navigator class='list' url="/pages/jishirenwu/jishirenwu?id=3&title=个性需求&city={{city}}" hover-class="navigator-hover">
+          <view>
+            <image src='http://ozpexz78z.bkt.clouddn.com/xu.png'></image>
+          </view>
+          <view>个性需求</view>
+        </navigator>
+        <navigator class='list' url="/pages/huodongliebiao/huodongliebiao" hover-class="navigator-hover">
+          <view>
+            <image src='http://ozpexz78z.bkt.clouddn.com/dong.png'></image>
+          </view>
+          <view>活动列表</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 导航结束 -->
+
+    <!-- 紧急任务 -->
+    <view class='jinji'>
+      <view class='jinji_top'>
+        <image src='http://ozpexz78z.bkt.clouddn.com/jinji02.png'></image>
+      </view>
+      <!-- 任务 -->
+      <view class='renwu_list'>
+
+        <view class='neirong' wx:if="{{rushJob}}">
+          <view class='neirong_list' wx:for="{{rushJob}}" wx:key bindtap="toDetail" data-id="{{item.goods_id}}">
+            <view class='rong_top'>
+              <view class='name'>{{item.goods_name}}</view>
+              <view class='num'>{{item.click_count}}人看过</view>
+            </view>
+            <view class='dizhi'>
+              <view class='dizhi_left'>
+                <view class="address">
+                  <image class="iconfont" src="../../image/add.png"> </image>
+                  <text class=" list2">{{item.addr}}</text>
+                </view>
+                <view>{{item.name}}</view>
+              </view>
+              <view class='dizhi_right'>领取</view>
+            </view>
+            <view class='rong_boot'>
+              <view class='boot_left'>
+                <view>
+                  <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                </view>
+                <view>还需{{item.need_people}}人</view>
+              </view>
+              <view class='boot_right'>{{item.on_time}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='none' wx:else style="font-size:28rpx;color:#666;">暂无数据...</view>
+      </view>
+      <!-- 任务结束 -->
+    </view>
+    <!-- 已完成任务  -->
+    <view class='yiwancheng'>
+      <view class='wancheng_img'>
+        <image src='http://ozpexz78z.bkt.clouddn.com/finish.png'></image>
+      </view>
+      <view class='yiwancheng_list'>
+        <!-- 完成任务 -->
+        <view class="contetns" wx:if="{{finishJob}}">
+          <view class='wancheng' wx:for="{{finishJob}}" wx:key bindtap="toShehe" data-id="{{item.goods_id}}">
+            <view class='wancheng_top'>
+              <view class='name1'>{{item.goods_name}}</view>
+              <view class='num1'>{{item.click_count}}人看过</view>
+            </view>
+            <view class='dizhi'>
+              <view class='dizhi_left'>
+                <view class="address">
+                  <image class="iconfont" src="../../image/add.png"> </image>
+                  <text class=" list2">{{item.addr}}</text>
+                </view>
+                <view>{{item.name}}</view>
+              </view>
+              <view class='dizhi_right' style='background:#a8a8a8;'>已完成</view>
+            </view>
+            <view class='wancheng_boot'>
+              <view class="leftTime">
+                <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+              </view>
+              <view class="boot_right">{{item.on_time}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='none' wx:else style="font-size:28rpx;color:#666;">暂无数据...</view>
+        <!-- 完成任务结束 -->
+      </view>
+    </view>
+  </view>
+</scroll-view>

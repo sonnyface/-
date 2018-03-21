@@ -1,0 +1,65 @@
+<!--pages/jishirenwuDetail/jishirenwuDetail.wxml-->
+<view class="container">
+  <!-- 内容1 -->
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务标题</text>
+      <text class="textCent">{{detaiLis.goods_name}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务内容</text>
+      <text class="textCent">{{detaiLis.goods_content}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong' wx:if="{{detaiLis.age}}">
+    <view class='neirong_list'>
+      <text class='name'>任务要求</text>
+      <text class="list">年龄：{{detaiLis.age}}</text>
+      <text class="list">联系方式：{{detaiLis.spu}}</text>
+      <text class="list">时间：{{detaiLis.start_time}} - {{detaiLis.end_time}}</text>
+      <view class="address"  bindtap="addMap" data-add="{{detaiLis.addr}}">
+        <text class="list list2">地点：{{detaiLis.addr}}</text>
+        <image class="iconfont" src="../../image/add.png"> </image>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='neirong' wx:if="{{detaiLis.age}}">
+    <view class='neirong_list'>
+      <text class='name'>佣兵信息</text>
+      <text class="list">姓名：{{detaiLis.user_name}}</text>
+      <text class="list">性别：{{detaiLis.sex==1?'男':'女'}}</text>
+      <text class="list">联系方式：{{detaiLis.mobile}}</text>
+      <text class="list">任务领取时间：{{detaiLis.add_time}}</text>
+      <text class="list">任务结束时间：{{detaiLis.f_time}}</text>
+    </view>
+  </view> -->
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务佣金</text>
+      <text class="textCent" style="color:red;">¥{{detaiLis.shop_price}}</text>
+    </view>
+  </view>
+
+  <view class='neirong' wx:if="{{detaiLis.goods_sn}}">
+    <view class='neirong_list'>
+      <text class='name'>任务邀请码</text>
+      <text class="textCent" style="color:red; font-size:30rpx; line-height:60rpx;">{{detaiLis.goods_sn}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <view wx:if="{{detaiLis.status==0 ||detaiLis.status=='-1'}}" style="width:90%;">
+    <button bindtap="deletJob" hover-class="btn">删除任务</button>
+  </view>
+  <view wx:else></view>
+
+
+</view>

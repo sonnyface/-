@@ -1,0 +1,31 @@
+/* pages/fabu/fabu.wxss */
+page{
+   background:url(http://ozpexz78z.bkt.clouddn.com/bgimg02.png) no-repeat;   
+  /* background:#999; */
+  background-size:100%;
+}
+.container{
+  width:100%;
+  height:100%;
+}
+.top{
+  line-height:90rpx;
+  color:#fff;
+  font-size:34rpx;
+  width:100%;
+  text-align:center;
+}
+.renwu{
+  width:100%;
+}
+.list{
+  background:url(http://ozpexz78z.bkt.clouddn.com/renwubg.png) no-repeat 80rpx; 
+  background-size:100%;
+  height:180rpx;
+  text-align:center;
+  line-height:130rpx;
+  margin-top:110rpx;
+  font-weight:600;
+  font-size:45rpx;
+  color:#333;
+}

@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/fabu/fabu",
+    "pages/mianduimian/mianduimian",
+    "pages/wode/wode",
+    "pages/jishirenwu/jishirenwu",
+    "pages/huodongliebiao/huodongliebiao",
+    "pages/jishirenwuDetail/jishirenwuDetail",
+    "pages/huodongguanggao/huodongguanggao",
+    "pages/personDetail/personDetail",
+    "pages/accpetjob/accpetjob",
+    "pages/unfinishJob/unfinishJob",
+    "pages/publishJob/publishJob",
+    "pages/wallet/wallet",
+    "pages/tixian/tixian",
+    "pages/chongzhi/chongzhi",
+    "pages/zhichumingxi/zhichumingxi",
+    "pages/wodexinyong/wodexinyong",
+    "pages/yijianfankui/yijianfankui",
+    "pages/lianxiwe/lianxiwe",
+    "pages/fabuDetail/fabuDetail",
+    "pages/yifubuDetail/yifubuDetail",
+    "pages/checkJob/checkJob",
+    "pages/checkDetail/checkDetail",
+    "pages/pingtaiguanggao/pingtaiguanggao",
+    "pages/bannerTre/bannerTre",
+    "pages/bannerTu/bannerTu",
+    "pages/doneJob/doneJob",
+    "pages/checkNopass/checkNopass",
+    "pages/add_gourmet/add_gourmet",
+    "pages/fubudone/fubudone",
+    "pages/zhifufangshi/zhifufangshi",
+    "pages/citylist/citylist"   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f6bb3c",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#979797",
+    "selectedColor": "#f6bb3c",
+    "borderStyle": "white",
+    "backgroundColer": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/logo01.png",
+        "selectedIconPath": "image/logo.png"
+      },
+      {
+        "pagePath": "pages/fabu/fabu",
+        "text": "发布",
+        "iconPath": "image/fabu.png",
+        "selectedIconPath": "image/fabu1.png"
+      },
+      {
+        "pagePath": "pages/mianduimian/mianduimian",
+        "text": "面对面",
+        "iconPath": "image/mianduimian.png",
+        "selectedIconPath": "image/mianduimian1.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的",
+        "iconPath": "image/wode.png",
+        "selectedIconPath": "image/wode1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 5000,
+    "uploadFile": 5000,
+    "downloadFile": 5000
+  }
+}

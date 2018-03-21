@@ -1,0 +1,152 @@
+<!--pages/accpetjob/accpetjob.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="list {{currentIndex==1?'on':''}}" data-index="1" bindtap="changTasp"> 发布中</view>
+    <view class="list {{currentIndex==2?'on':''}}" data-index="2" bindtap="changTasp">进行中</view>
+    <view class="list {{currentIndex==3?'on':''}}" data-index="3" bindtap="changTasp">任务列表</view>
+  </view>
+  <!-- 发布中 -->
+  <view class="tapList" wx:if="{{currentIndex==1}}">
+    <view class='yiwancheng'>
+      <view class='jinji'>
+        <!-- 任务 -->
+        <view class='renwu_list'>
+          <view class='time'>任务列表</view>
+          <view class='neirong'>
+            <!-- 内容1 -->
+            <view class='neirong_list' bindtap="toDetail" data-title="发布中" wx:for="{{publishing}}" wx:key="{{item.goods_id}}" data-id="{{item.goods_id}}">
+              <view class='rong_top'>
+                <view class='name'>{{item.goods_name}}</view>
+                <view class='num'>{{item.click_count}}人看过</view> 
+              </view>
+              <view class='dizhi'>
+                <view class='dizhi_left' wx:if="{{item.addr.length<=0}}">
+                  <view style="padding-left:0">面对面任务</view>
+                </view>
+                <view class='dizhi_left' wx:else>
+                  <view class="address">
+                    <image class="iconfont" src="../../image/add.png"> </image>
+                    <text class=" list2">{{item.addr}}</text>
+                  </view>
+                  <view>{{item.name}}</view>
+                </view>
+
+                <view class='dizhi_right'>发布中</view>
+              </view>
+              <view class='rong_boot'>
+                <view class='boot_left'>
+                  <view>
+                    <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                  </view>
+
+                  <view wx:if="{{item.addr.length<=0}}"></view>
+                  <view wx:else>还需{{item.need_people}}人</view>
+                </view>
+                <view class='boot_right'>{{item.on_time}}</view>
+              </view>
+            </view>
+            <!-- 内容1结束 -->
+          </view>
+        </view>
+        <!-- 任务结束 -->
+      </view>
+    </view>
+  </view>
+  <!-- 进行中 -->
+  <view class="tapList" wx:if="{{currentIndex==2}}">
+    <view class='yiwancheng'>
+      <view class='jinji'>
+        <!-- 任务 -->
+        <view class='renwu_list'>
+          <view class='time'>任务列表</view>
+          <view class='neirong'>
+            <!-- 内容1 -->
+           
+            <view class='neirong_list' bindtap="toDetail" data-title="进行中" wx:for="{{going}}" wx:key="{{item.goods_id}}" data-id="{{item.goods_id}}">
+              <view class='rong_top'>
+                <view class='name'>{{item.goods_name}}</view>
+                <view class='num'>{{item.click_count}}人看过</view>
+              </view>
+              <view class='dizhi'>
+                <view class='dizhi_left' wx:if="{{item.addr.length<=0}}">
+                  <view style="padding-left:0">面对面任务</view>
+                </view>
+                <view class='dizhi_left' wx:else>
+                  <view class="address">
+                    <image class="iconfont" src="../../image/add.png"> </image>
+                    <text class=" list2">{{item.addr}}</text>
+                  </view>
+                  <view>{{item.name}}</view>
+                </view>
+                <view class='dizhi_right'>进行中</view>
+              </view>
+              <view class='rong_boot'>
+                <view class='boot_left'>
+                  <view>
+                    <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                  </view>
+                   <view wx:if="{{item.addr.length<=0}}"></view>
+                  <view wx:else>还需{{item.need_people}}人</view>
+                </view>
+                <view class='boot_right'>{{item.on_time}}</view>
+              </view>
+            </view>           
+            <!-- 内容1结束 -->
+
+          </view>
+        </view>
+        <!-- 任务结束 -->
+
+
+      </view>
+    </view>
+  </view>
+  <!-- 任务结束 -->
+  <view class="tapList" wx:if="{{currentIndex==3}}">
+    <view class='yiwancheng'>
+      <view class='jinji'>
+        <!-- 任务 -->
+        <view class='renwu_list'>
+          <view class='time'>任务列表</view>
+          <view class='neirong'>
+            <!-- 内容1 -->
+             <scroll-view class="scroll_list" style="height:{{windowHeight}}px;" scroll-y="true" bindscrolltolower="loadMore">
+            <view class='neirong_list' bindtap="fabudoned" data-title="已结束" wx:for="{{contentlist}}" wx:key="{{item.goods_id}}" data-id="{{item.order_id}}">
+              <view class='rong_top'>
+                <view class='name'>{{item.goods_name}}</view>
+                <view class='num'>{{item.click_count}}人看过</view>
+              </view>
+              <view class='dizhi'>
+                <view class='dizhi_left' wx:if="{{item.addr.length<=0}}">
+                  <view style="padding-left:0">面对面任务</view>
+                </view>
+                <view class='dizhi_left' wx:else>
+                  <view class="address">
+                    <image class="iconfont" src="../../image/add.png"> </image>
+                    <text class=" list2">{{item.addr}}</text>
+                  </view>
+                  <view>{{item.name}}</view>
+                </view>
+                <view class='dizhi_right' style="background:#aaa;">已结束</view>
+              </view>
+              <view class='rong_boot'>
+                <view class='boot_left'>
+                  <view>
+                    <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                  </view>
+                  <view wx:if="{{item.addr.length<=0}}"></view>
+                  <!-- <view wx:else>还需{{item.need_people}}人</view> -->
+                </view>
+                <view class='boot_right'>{{item.on_time}}</view>
+              </view>
+            </view>
+            </scroll-view>
+            <!-- 内容1结束 -->
+
+          </view>
+        </view>
+        <!-- 任务结束 -->
+      </view>
+    </view>
+  </view>
+</view>

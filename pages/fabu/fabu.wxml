@@ -1,0 +1,15 @@
+<!--pages/fabu/fabu.wxml-->
+<view class="container">
+    <view class='top'>请选择您想发布任务的类型</view>
+    <view class='renwu'>
+        <view class='list' bindtap="totask" data-id="1">
+            即时任务
+        </view>
+        <view class='list' bindtap="totask" data-id="2">
+            日结任务
+        </view>
+        <view class='list' bindtap="totask" data-id="3">
+            个性需求
+        </view>
+    </view>
+</view>

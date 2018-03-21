@@ -1,0 +1,223 @@
+/* pages/mianduimian/mianduimian.wxss */
+
+page {
+  background: url(http://ozpexz78z.bkt.clouddn.com/mianduimianbg.png) no-repeat;
+  background-size: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0 24rpx;
+}
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 30%;
+  color: #656e84;
+}
+
+.on {
+  color: #000;
+  border-bottom: 5rpx solid #ff6490;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  color: #fff;
+}
+
+/* 任务 */
+
+.biaoti {
+  line-height: 75rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.section input {
+  background: #fff;
+  color: #818181;
+  height: 60rpx;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+}
+
+.text {
+  background: #fff;
+  color: #818181;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  width: 100%;
+  line-height: 40rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+
+.tishi {
+  color: #fff;
+  font-size: 24rpx;
+  text-align: right;
+  line-height: 50rpx;
+}
+
+/* 邀请码 */
+
+.section1 {
+  background: none;
+  border: 3rpx dashed #ff6490;
+}
+
+.section1 input {
+  background: none;
+  color: #fff;
+  border-radius: 10rpx;
+}
+
+.sections {
+  width: 100%;
+  background: #fff;
+  border-radius: 10rpx;
+  /* box-shadow: 0 3rpx 4rpx #ddd; */
+}
+
+.sections .age {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  position: relative;
+}
+
+.sections .age::after {
+  position: absolute;
+  right: 10rpx;
+  bottom: 0;
+  left: 10rpx;
+  height: 1px;
+  content: '';
+  background-color: #c8c7cc;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.sections view .tit {
+  font-size: 26rpx;
+  color: #3d3d3d;
+  display: block;
+  width: 160rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.sections view input {
+  font-size: 26rpx;
+  color: #3d3d3d;
+  flex: 1;
+  height: 100%;
+}
+
+.picker {
+  height: 100%;
+}
+
+.tiome {
+  float: left;
+  width: 200rpx;
+}
+
+.txtTime {
+  float: left;
+  font-size: 26rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #666 !important;
+}
+
+.nowtime {
+  float: left;
+  width: 180rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #666 !important;
+}
+
+.picker1 {
+  float: left;
+  width: 290rpx;
+}
+
+button {
+  width: 100%;
+  height: 80rpx;
+  color: #fff;
+  line-height: 80rpx;
+  background: #ff6490;
+  margin-top: 50rpx;
+}
+
+.btn {
+  background: #f695b0;
+  color: #f5f5f5;
+}
+
+.radio-group {
+  width: 540rpx;
+  height: 60rpx;
+  display: flex;
+}
+
+.radio {
+  display: flex;
+  align-content: center;
+}
+
+.radio text {
+  width: 60rpx !important;
+  padding-right: 20rpx;
+}
+
+.ageNumber { 
+ flex:1;
+}
+
+.ageNumber .inpt{
+  float: left;
+  width: 60rpx;
+  text-align: center;
+}
+
+.ageNumber .ziduan {
+  float: left;
+  width: 30rpx;
+  line-height: 60rpx;
+}
+.addName {
+  float: left;
+  width: 540rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #666 !important;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+}

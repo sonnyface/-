@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="banner">
+    <image mode='widthFix' src="{{lis.thumb}}"></image>
+  </view>
+  <view class='main'>
+    <text>{{lis.description}}</text>
+    <view class="date">{{lis.publish_time}}</view>
+    <view class="dianzan">
+      <view class="image">
+        <image src="http://ozpexz78z.bkt.clouddn.com/dianzan.png"></image>
+        <text>点赞{{lis.click}}次</text>
+      </view>
+    </view>
+  </view>
+
+</view>

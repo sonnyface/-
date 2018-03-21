@@ -1,0 +1,67 @@
+<!--pages/jishirenwu/jishirenwu.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="headImg" src="../../image/pic01.png"></image>
+    <view class="headContent">
+      <view class="top" bindtap="timeSort">
+        <image class="icoImg" src="../../image/pic02.png"></image>
+        <text class="text">时间检索</text>
+      </view>
+      <view class="top" bindtap="valueSort">
+        <image class="icoImg" src="../../image/pic03.png"></image>
+        <text class="text">价格排序</text>
+      </view>
+    </view>
+  </view>
+  <!-- 紧急任务 -->
+  <view class='jinji'>
+    <!-- 任务 -->
+    <view class='renwu_list' >
+      <view class='neirong'>
+        <!-- 内容1 -->
+        <!--下拉加载更多  -->
+         <view style="padding:20rpx 0 0 20rpx">{{datalis}}</view> 
+        <view class="head" hidden="{{hideHeader}}">
+          <!-- <view>下拉刷新中……</view> -->
+           <!-- <view>{{refreshTime}}</view>  -->
+        </view>
+        <scroll-view class="list" style="height:{{windowHeight}}px;" scroll-y="true" bindscrolltolower="loadMore">
+          <view class='neirong_list' wx:for="{{contentlist}}" wx:key bindtap='jishirenwuDetail' data-id="{{item.goods_id}}">
+            <view class='rong_top'>
+              <view class='name'>{{item.goods_name}}</view>
+              <view class='num'>{{item.click_count}}人看过</view>
+            </view>
+            <view class='dizhi'>
+              <view class='dizhi_left'>
+                <view class="address">
+                  <image class="iconfont" src="../../image/add.png"> </image>
+                  <text class=" list2">{{item.addr}}</text>
+                </view>
+                <view>{{item.name}}</view>
+              </view>
+              <view class='dizhi_right'>领取</view>
+            </view>
+            <view class='rong_boot'>
+              <view class='boot_left'>
+                <view>
+                  <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                </view>
+                <view>还需{{item.need_people?item.need_people:'0'}}人</view>
+              </view>
+              <view class='boot_right'>{{item.on_time}}</view>
+            </view>
+          </view>
+
+        </scroll-view>
+        <view class="bottom" hidden="{{hideBottom}}">
+          <!-- <view>{{loadMoreData}}</view> -->
+          <!-- <view>{{refreshTime}}</view> -->
+        </view>
+        <!-- 内容1结束 -->
+      </view>      
+    </view>
+    <!-- 任务结束 -->    
+  </view>
+
+
+</view>

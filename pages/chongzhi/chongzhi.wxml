@@ -1,0 +1,12 @@
+<!--pages/chongzhi/chongzhi.wxml-->
+<view class="container">
+    <view class="content">
+        <view class="tixian">充值金额</view>
+        <view class="tixianMoney">
+          <text>￥</text>
+          <input type="digit" class="money" bindinput='money' ></input>        
+        </view>
+    </view>
+
+    <button bindtap="chongzhi" hover-class="btn" > 充值</button>
+</view>

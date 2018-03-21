@@ -1,0 +1,7 @@
+<!--pages/yijianfankui/yijianfankui.wxml-->
+<view class="container">    
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="请输入您想说的话" name="textarea" placeholder-style="font-size:30rpx;"/>
+    <button form-type="submit" hover-class="btn" > 确认 </button>
+  </form>
+</view>

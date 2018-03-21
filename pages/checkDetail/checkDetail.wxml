@@ -1,0 +1,94 @@
+<!--pages/jishirenwuDetail/jishirenwuDetail.wxml-->
+<view class="container">
+  <!-- 内容1 -->
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>订单号:</text>
+      <text class="textCent">{{list.order_sn}}</text>
+    </view>
+  </view>
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务标题</text>
+      <text class="textCent">{{list.goods_name}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务内容</text>
+      <text class="textCent">{{list.goods_content}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong' wx:if="{{list.age}}">
+    <view class='neirong_list'>
+      <text class='name'>任务要求</text>
+      <text class="list">年龄：{{list.age}}</text>
+      <text class="list">联系方式：{{list.spu}}</text>
+      <text class="list">时间：{{list.start_time}} - {{list.end_time}}</text>
+      <view class="address"  bindtap="addMap" data-add="{{detaiLis.addr}}">
+        <text class="list list2">地点：{{list.addr}}</text>
+        <image class="iconfont" src="../../image/add.png"> </image>
+      </view>
+    </view>
+  </view>
+  <view class='neirong' wx:if="{{list.age}}">
+    <view class='neirong_list'>
+      <text class='name'>佣兵信息</text>
+      <text class="list">姓名：{{list.user_name}}</text>
+      <text class="list">性别：{{list.sex==1?'男':'女'}}</text>
+       <text class="list">佣兵等级：{{list.level}}</text>
+      <text class="list">联系方式：{{list.mobile}}</text>
+      <text class="list">任务领取时间：{{list.add_time}}</text>
+      <text class="list">任务结束时间：{{list.f_time}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务佣金</text>
+      <text class="textCent" style="color:red;">¥{{list.shop_price}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <view class="state" style="margin-top:20rpx;;" wx:if="{{list.order_status ==0}}">
+    <!-- <view wx:if="{{list.address.length>0}}">
+      <view class='neirong'>
+        <text class='name' style="text-align:left;">取消原因</text>
+        <text class="textCent" style="text-align:left; font-weight:100;">{{list.address}}</text>
+      </view>
+      <view class="bottom">
+        <button catchtap="toPassdone" data-id="{{list.order_id}}" data-stute="1"  hover-class="btn"> 取消</button>
+        <button catchtap="toPassdone" data-id="{{list.order_id}}" data-stute="2"  hover-class="btn"> 不取消</button>
+      </view>
+    </view> -->
+    <view>
+      <view class="idTit">预览图片确认完成</view>
+      <view class="box1">
+        <view class="box2" bindtap="previewImage" data-img="{{list.original_img}}">
+          <image src="{{list.original_img}}"></image>
+        </view>
+      </view>
+      <view class="bottom">
+        <button catchtap="tocheck" data-tate="4" hover-class="btn"> 通过</button>
+        <button catchtap="tocheck" data-tate="3" hover-class="btn"> 不通过</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="state" wx:if="{{list.order_status ==3}}">
+    <view>未完成</view>
+    <view>信用值缺损</view>
+  </view>
+
+  <view class="state" wx:if="{{list.order_status ==4}}">
+    <view></view>
+    <view>任务已完成</view>
+  </view> -->
+
+</view>

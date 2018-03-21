@@ -1,0 +1,25 @@
+<!--pages/zhichumingxi/zhichumingxi.wxml-->
+<view class="container">
+  <view class="banner">
+    <image mode="widthFix" src="../../image/bg.png"></image>
+    <view class="header">
+      <text>信用值</text>
+      <text>{{content.pay_points}}分</text>
+      <text>{{content.level}}</text>
+    </view>
+  </view>
+  <view class="title">信用记录</view>
+  <view class="content">
+    <view class="list" wx:for="{{lists}}" wx:key>
+      <view class='left'>
+        <view class="desc">{{item.log_info}}</view>
+        <view class="date">{{item.log_time}}</view>
+      </view>
+      <view class='right'>
+        <view class="{{item.user_money>0?'money':'chongzhi'}}">{{item.credit}}</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

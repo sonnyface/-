@@ -1,0 +1,5 @@
+<!--pages/zhifufangshi/zhifufangshi.wxml-->
+<view class="container">
+  <button class="btm1" bindtap="weixinzhifu" hover-class="btn1">微信支付</button>
+  <button class="btm2" bindtap="yuezhifu" hover-class="btn2">余额支付</button>
+</view>

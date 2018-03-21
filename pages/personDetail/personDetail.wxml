@@ -1,0 +1,95 @@
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="top">
+      <view class="section">
+        <view class="section__title">姓名</view>
+        <input name="username" value="{{lists.user_name}}" disabled='{{lists.is_check==2?true:false}}' placeholder-class='placeholder' placeholder="请输入您的姓名"  />
+      </view>
+       <view class="section">
+        <view class="section__title">姓别</view>
+        <input name="sex" value="{{lists.sex==1?'男':'女'}}" disabled='{{lists.is_check==2?true:false}}' placeholder-class='placeholder' placeholder="请输入您的性别" />
+      </view>
+      <view class="section">
+        <view class="section__title">手机号</view>
+        <input name="mobile" value="{{lists.mobile}}" type="number" disabled='{{lists.is_check==2?true:false}}' maxlength="11" placeholder-class='placeholder' placeholder="请输入手机号" />
+      </view>
+      <view class="section">
+        <view class="section__title">身份证号</view>
+        <input name="userIdNo" value="{{lists.userIdNo}}" type="idcard" disabled='{{lists.is_check==2?true:false}}' maxlength="18" placeholder-class='placeholder' placeholder="请输入身份证号" />
+      </view>
+      <view class="section">
+        <view class="section__title">现住址</view>
+        <input name="addr" value="{{lists.addr}}" disabled='{{lists.is_check==2?true:false}}' placeholder-class='placeholder' placeholder="请输入现住址" />
+      </view>
+    </view>
+    <view class="tishi"> 温馨提示：填写会增加信用分</view>
+    <view class="upload">
+      <view class="idTit">身份证照片上传</view>
+      <!--如果已经注册过  -->
+
+      <view class="content" wx:if="{{lists.is_check==1 || lists.is_check==2}}">
+        <!--身份证正面  -->
+        <view class="front">
+          <view class='tupian' wx:if="{{isClick==true}}" bindtap="{{lists.is_check<2?'chooseImg':''}}">
+            <view class="tu_list">
+              <image src="{{lists.pic_a}}" mode="scaleToFill" />
+            </view>
+          </view>
+          <view wx:if="{{isClick==false}}" class='tupian' wx:for="{{files}}" wx:key="">
+            <view class="tu_list" catchtap="previewImage" id="{{item}}">
+              <image src="{{item}}" mode="scaleToFill" />
+            </view>
+          </view>
+        </view>
+        <!--身份证反面  -->
+        <view class="reverse">
+          <view class='tupian' wx:if="{{istap==true}}" bindtap="{{lists.is_check<2?'chooseImging':''}}">
+            <view class="tu_list">
+              <image src="{{lists.pic_b}}" mode="scaleToFill" />
+            </view>
+          </view>
+          <view wx:if="{{istap==false}}" class='tupian' wx:for="{{file}}" wx:key="">
+            <view class="tu_list" catchtap="previewImaging" id="{{item}}">
+              <image src="{{item}}" mode="scaleToFill" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!--如果没有注册过  -->
+      <view class="content" wx:else>
+        <!--身份证正面  -->
+        <view class="front">
+          <view class="box1" wx:if="{{isClick==true}}" bindtap="chooseImg">
+            <view class="box2">
+              <image src="../../image/pic05.png"></image>
+            </view>
+            <text>身份证正面</text>
+          </view>
+          <view wx:if="{{isClick==false}}" class='tupian' wx:for="{{files}}" wx:key="">
+            <view class="tu_list" catchtap="previewImage" id="{{item}}">
+              <image src="{{item}}" mode="scaleToFill" />
+            </view>
+          </view>
+        </view>
+        <!--身份证反面  -->
+        <view class="reverse">
+          <view class="box1" wx:if="{{istap==true}}" bindtap="chooseImging">
+            <view class="box2">
+              <image src="../../image/pic05.png"></image>
+            </view>
+            <text>身份证反面</text>
+          </view>
+          <view wx:if="{{istap==false}}" class='tupian' wx:for="{{file}}" wx:key="">
+            <view class="tu_list" catchtap="previewImaging" id="{{item}}">
+              <image src="{{item}}" mode="scaleToFill" />
+            </view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+    <button formType="submit" hover-class="btn" disabled='{{lists.is_check==2?true:false}}' > 确 定</button>
+
+  </form>
+</view>

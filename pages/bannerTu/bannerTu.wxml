@@ -1,0 +1,47 @@
+<!--pages/jishirenwuDetail/jishirenwuDetail.wxml-->
+<view class="container">
+    <!-- 内容1 -->
+     <view class='neirong'>        
+        <view class='neirong_list'>            
+           <text class='name'>任务标题</text> 
+           <text class="textCent">{{detaiLis.goods_name}}</text>
+        </view>
+     </view>
+    <!-- 内容1结束 -->
+     <!-- 内容1 -->
+     <view class='neirong'>        
+        <view class='neirong_list'>            
+           <text class='name'>任务内容</text> 
+           <text class="textCent">{{detaiLis.goods_remark}}</text>
+        </view>
+     </view>
+    <!-- 内容1结束 -->
+     <!-- 内容1 -->
+     <view class='neirong'>        
+        <view class='neirong_list'>            
+           <text class='name'>任务要求</text> 
+           <text class="list">年龄：{{detaiLis.age}}</text>
+           <text class="list">性别：{{detaiLis.sex}}</text>
+           <text class="list">时间：{{detaiLis.start_time}}</text>           
+          <view class="address">
+             <text class="list list2">地点：{{detaiLis.addr}}</text> 
+             <image class="iconfont" src="../../image/add.png"> </image>  
+          </view>
+                 
+        </view>
+     </view>
+    <!-- 内容1结束 -->
+     <!-- 内容1 -->
+     <view class='neirong'>        
+        <view class='neirong_list'>            
+           <text class='name'>任务佣金</text> 
+           <text class="textCent" style="color:red;">¥{{detaiLis.shop_price}}</text>
+        </view>
+     </view>
+    <!-- 内容1结束 -->
+
+    <button bindtap="toindex" hover-class="btn" > 领取任务</button>
+
+
+
+</view>

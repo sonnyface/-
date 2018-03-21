@@ -1,0 +1,95 @@
+<!--pages/wode/wode.wxml-->
+  <!-- 头像 -->
+  <view class="userinfo">
+    <block>
+      <view class='bg'>
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </block>
+  </view>
+  <!-- 列表 -->
+  <view class='alllist'>
+      <navigator class="list" url="/pages/personDetail/personDetail" hover-class="navigator-hover">
+        <view class='left_tu' >
+            <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/xinxi.png"></image>
+        </view>
+        <text class="l-add">个人信息</text>
+        <view class='right_tu'>
+            <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+        </view>
+      </navigator>
+      <!-- 任务 -->
+      <view class='renwu'>
+          <navigator class="list"  url="/pages/accpetjob/accpetjob" hover-class="navigator-hover">
+            <view class='left_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/jieshou.png"></image>
+            </view>
+            <text class="l-add">我接受的任务</text>
+            <view class='right_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+            </view>
+          </navigator>
+          <navigator class="list listPub" url="/pages/publishJob/publishJob" hover-class="navigator-hover">
+            <view class='left_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/fabu.png"></image>
+            </view>
+            <text class="l-add">我发布的任务</text>
+            <view class='right_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+            </view>
+          </navigator>
+           <navigator class="list" url="/pages/checkJob/checkJob" hover-class="navigator-hover">
+            <view class='left_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/fabu.png"></image>
+            </view>
+            <text class="l-add">审核任务</text>
+            <view class='right_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+            </view>
+          </navigator>
+      </view>
+      <!-- 钱包 -->
+      <view class='renwu'>
+          <navigator class="list" url="/pages/wallet/wallet" hover-class="navigator-hover">
+            <view class='left_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/qianbao.png"></image>
+            </view>
+            <text class="l-add">钱包</text>
+            <view class='right_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+            </view>
+          </navigator>
+          <navigator class="list" url="/pages/wodexinyong/wodexinyong" hover-class="navigator-hover">
+            <view class='left_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/xinyong.png"></image>
+            </view>
+            <text class="l-add">我的信用</text>
+            <view class='right_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+            </view>
+          </navigator>
+      </view>
+      <!-- 反馈 -->
+      <view class='renwu'>
+          <navigator class="list" url="/pages/yijianfankui/yijianfankui" hover-class="navigator-hover">
+            <view class='left_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/fankui.png"></image>
+            </view>
+            <text class="l-add">意见反馈</text>
+            <view class='right_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+            </view>
+          </navigator>
+          <navigator class="list" url="/pages/lianxiwe/lianxiwe" hover-class="navigator-hover">
+            <view class='left_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/lianxi.png"></image>
+            </view>
+            <text class="l-add">联系我们</text>
+            <view class='right_tu'>
+                <image class="l-icon" src="http://ozpexz78z.bkt.clouddn.com/right1.png"></image> 
+            </view>
+          </navigator>
+      </view>
+  </view>
+

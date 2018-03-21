@@ -1,0 +1,19 @@
+<!--pages/zhichumingxi/zhichumingxi.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="list" wx:for="{{list}}" wx:key="{{item.log_id}}">
+      <view class='left'>
+        
+        <view class="desc">{{item.desc}}</view>
+        <view class="date" wx:if="{{item.desc=='用户提现'}}"></view>
+         <view class="date" wx:else>订单号：{{item.order_sn}}</view>
+        <view class="date">{{item.change_time}}</view>
+      </view>
+      <view class='right'>
+        <view class="{{item.user_money>0?'money':'zhichu'}}">{{item.user_money}}</view>        
+      </view>  
+    </view>
+  </view>
+
+
+</view>

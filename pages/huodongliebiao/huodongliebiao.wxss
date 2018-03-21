@@ -1,0 +1,52 @@
+/* pages/huodongliebiao/huodongliebiao.wxss */
+page{
+  background: #f5f5f5;
+}
+.container{
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  padding:20rpx;
+}
+.lists{
+  width:100%;
+  height:200rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 5rpx 6px #ddd;
+  display: flex;
+  margin-bottom:24rpx;
+}
+
+.section{
+  width:200rpx;
+  height:200rpx;
+  
+}
+.section image{
+  width:200rpx;
+  height:200rpx;
+  border-radius: 20rpx 0 0 20rpx;
+}
+.right{
+  flex:1;
+  box-sizing: border-box;
+  padding:28rpx 24rpx 23rpx 24rpx;
+  position: relative;  
+}
+.title{
+  color:#171719;
+  font-size:30rpx;
+  display:block;
+}
+.title01{
+   color:#ff5058;
+   font-size:28rpx;  
+   position: absolute;
+   bottom:15rpx;
+}
+.title01 text{
+  line-height:50rpx;
+  padding-right:20rpx;  
+
+}

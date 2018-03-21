@@ -1,0 +1,90 @@
+<!--pages/jishirenwuDetail/jishirenwuDetail.wxml-->
+<view class="container">
+  <!-- 内容1 -->
+
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>订单号:</text>
+      <text class="textCent">{{list.order_sn}}</text>
+    </view>
+  </view>
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务标题</text>
+      <text class="textCent">{{list.goods_name}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务内容</text>
+      <text class="textCent">{{list.goods_content}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong' wx:if="{{list.age}}">
+    <view class='neirong_list'>
+      <text class='name'>任务要求</text>
+      <text class="list">年龄：{{list.age}}</text>
+      <text class="list">性别：{{list.sex}}</text>
+      <text class="list">时间：{{list.start_time}} - {{list.end_time}}</text>
+      <text class="list">联系方式：{{list.spu}}</text>
+      <view class="address" bindtap="addMap" data-add="{{list.addr}}">
+        <text class="list list2">地点：{{list.addr}}</text>
+        <image class="iconfont" src="../../image/add.png"> </image>
+      </view>
+
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务佣金</text>
+      <text class="textCent" style="color:red;">¥{{list.shop_price}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <view style="width:100%">
+    <view class="state" style="margin-top:20rpx;;" wx:if="{{list.order_status ==0}}">
+      <view wx:if="{{list.is_check==0}}">
+        <view class="idTit">上传照片以示完成</view>
+        <view wx:if="{{isClick==true}}" class="box1" bindtap="chooseImg">
+          <view class="box2">
+            <image src="../../image/pic05.png"></image>
+          </view>
+        </view>
+        <view wx:if="{{isClick==false}}" class='tupian' wx:for="{{files}}" wx:key="">
+          <view class="tu_list" bindtap="previewImage" id="{{item}}">
+            <image src="{{item}}" mode="aspectFit" />
+          </view>
+        </view>
+        <form class="btm" report-submit='true' bindsubmit="toindex" bindreset="formReset">          
+          <button  form-type='submit' hover-class="btn"> 确定完成</button>
+          <button bindtap="cancelJob" hover-class="btn"> 取消任务</button>
+        </form>
+        <form class="textArea" report-submit='true' wx:if="{{isclick}}" bindsubmit="formSubmit" bindtap='formSub' bindreset="formReset">
+          <view class="section">
+            <textarea class='text' value="{{inputValue}}" name="neirong" placeholder="请输入取消原因" maxlength="-1" placeholder-style="line-height:280rpx;" />
+          </view>
+          <button form-type='submit' hover-class="btn" style="width:90%; background:#ff6490;color:#fff"> 确 定</button>
+        </form>
+      </view>
+      <view wx:else="{{list.is_check}}"></view>
+    </view>
+
+    <view class="state" wx:if="{{list.order_status ==3}}">
+      <view>未完成</view>
+      <view>信用值 -5分</view>
+    </view>
+
+    <view class="state" wx:if="{{list.order_status ==4}}">
+      <view></view>
+      <view>任务已完成</view>
+    </view>
+
+  </view>
+</view>

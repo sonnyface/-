@@ -1,0 +1,69 @@
+<!--pages/mianduimian/mianduimian.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">发布任务</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">接受任务</view>
+  </view>
+  <view wx:if="{{currentTab == 0}}" class="swiper-box">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!-- 任务标题 -->
+      <view class='renwubiaoti'>
+        <view class='biaoti'>任务标题</view>
+        <view class="section">
+          <input value="{{inputValue}}" placeholder="请填写任务标题" name="biaoti" />
+        </view>
+      </view>
+      <!-- 任务内容 -->
+      <view class='renwuneirong'>
+        <view class='biaoti'>任务内容</view>
+        <view class="section">
+          <textarea class='text'  value="{{inputValue}}" name="neirong" placeholder="请输入发布内容" maxlength="-1" placeholder-style="line-height:280rpx;" />
+        </view>
+        <view class='tishi'>友情提示：任务内容越详细，匹配度越高</view>
+      </view>
+      <!-- 任务佣金 -->
+      <view class='renwubiaoti'>
+        <view class='biaoti'>任务佣金</view>
+        <view class="section">
+          <input type="digit"  value="{{inputValue}}" placeholder="请填写任务佣金" name="yongjin" />
+        </view>
+      </view>
+      <!-- 提交 -->
+      <button formType="submit" hover-class="btnn"> 生成任务码</button>
+    </form>
+  </view>
+
+  <view wx:if="{{currentTab == 1}}" class="swiper-box">
+    <form bindsubmit="formsumit" bindreset="formReset" report-submit='true'>
+      <!-- 邀请码 -->
+      <view class='yaoqingma'>
+        <view class='biaoti'>任务码</view>
+        <view class="section section1">
+          <input value="{{inputVal}}" placeholder="请填写任务码" maxlength='6' name="yaoqingma" bindinput='accpetInput' placeholder-style="color:#fff;" type="number"/>
+        </view>
+      </view>
+
+      <!-- 任务内容 -->
+      <view wx:if="{{gsn}}">
+        <view class='renwuneirong' >
+          <view class='biaoti'>任务详情</view>
+          <view class="sections">
+            <view class="tit" style="color:#000;line-height:40rpx;">任务内容</view>
+            <view class='titcont' style="color:#333;"> {{acceptJob.goods_content}}
+            </view>
+          </view>
+          <view class='tishi'>友情提示：任务内容越详细，匹配度越高</view>
+        </view>
+        <!-- 任务佣金 -->
+        <view class='neirong' >
+          <view class='neirong_list'>
+            <text class='name'>任务佣金</text>
+            <text class="textCent" style="color:red;">¥{{acceptJob.shop_price}}</text>
+          </view>
+        </view>
+      </view>
+      <view  wx:else></view>
+      <button formType="submit" hover-class="btnn"> 接受任务</button>
+    </form>
+  </view>
+</view>

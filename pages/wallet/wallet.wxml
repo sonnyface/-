@@ -1,0 +1,16 @@
+<!--pages/wallet/wallet.wxml-->
+
+<view class="container">
+   <view class="header" bindtap="zhichumingxi">查看支出明细</view> 
+  <view class="content">
+    <view class="demon">
+      <image src="../../image/demon.png"></image>
+    </view> 
+    <view class="money">
+       <text>我的余额</text>
+       <text>¥{{list.user_money}}</text>       
+    </view> 
+  </view>
+  <button bindtap="chongzhi" hover-class="btn" > 充值</button>
+   <button bindtap="tixian" hover-class="btn" > 提现</button> 
+</view>

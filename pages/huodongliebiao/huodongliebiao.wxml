@@ -1,0 +1,18 @@
+
+<view class="container">
+
+  <view class="lists" bindtap="huodongguanggao" wx:for="{{lists}}" wx:key="{{item.id}}" data-id="{{item.id}}">
+    <view class="section">
+      <image  src="{{item.original_img}}"></image>    
+    </view>
+    <view class="right">
+      <view class="title">{{item.title}}</view>
+      <view class="title01">
+          <text >查看详情</text>
+          <text >{{item.start_time}}</text>
+      </view>      
+    </view>  
+  </view>
+
+</view>
+

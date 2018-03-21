@@ -1,0 +1,103 @@
+<!--pages/mianduimian/mianduimian.wxml-->
+<view class="container">
+  <view class="swiper-box">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!-- 任务标题 -->
+      <view class='renwubiaoti'>
+        <view class='biaoti'>任务标题</view>
+        <view class="section">
+          <input placeholder="请填写任务标题" name="goods_name" />
+        </view>
+      </view>
+      <!-- 任务内容 -->
+      <view class='renwuneirong'>
+        <view class='biaoti'>任务内容</view>
+        <view class="section">
+          <textarea class='text' name="goods_content" placeholder="请输入发布内容" maxlength="-1" placeholder-style="line-height:280rpx;" />
+        </view>
+        <view class='tishi'>友情提示：任务内容越详细，匹配度越高</view>
+      </view>
+      <!-- 任务佣金 -->
+      <view class='renwubiaoti'>
+        <view class='biaoti'>任务要求</view>
+        <view class="sections">
+          <view class="age ageNum">
+            <text class="tit" decode="{{true}}" space="{{true}}">年 &nbsp;&nbsp;&nbsp;&nbsp; 龄：</text>
+            <view class="ageNumber">
+              <input class="inpt" name="age1" type="number" placeholder='0' maxlength='2'></input>
+              <text class="tit" style="width:50rpx; float:left;">--</text>
+              <input class="inpt" name="age2" type="number" placeholder='100' maxlength='2'></input>
+            </view>
+          </view>
+          <view class="age">
+            <text class="tit" decode="{{true}}" space="{{true}}">性 &nbsp;&nbsp;&nbsp;&nbsp; 别：</text>
+            <!-- <input name="sex"></input> -->
+            <radio-group class="radio-group" bindchange="radioChange">
+              <label class="radio">
+                <radio class="sizeBig" value="男" checked="checked" />
+                <text class="tit">男</text>
+              </label>
+              <label class="radio">
+                <radio class="sizeBig" value="女" />
+                <text class="tit">女</text>
+              </label>
+              <label class="radio">
+                <radio class="sizeBig" value="不限" />
+                <text class="tit">不限</text>
+              </label>
+            </radio-group>
+
+          </view>
+          <view class="age">
+            <picker mode="date" value="{{date}}" class="picker" start="{{time}}" end="" bindchange="bindDateChange">
+              <text class="tiome tit">开始日期：</text>
+              <view class="{{isClick?'txtTime':'nowtime'}}" name="dates" data-value="{{dates}}">{{isClick?dates:'开始日期'}}</view>
+            </picker>
+            <picker mode="time" value="{{time}}" class="picker1" start="00:00" end="23:59" bindchange="bindTimeChange">
+              <view class="{{istap?'txtTime':'nowtime'}}" name="times" data-value="{{times}}">{{istap?times:'开始时间'}}
+              </view>
+            </picker>
+          </view>
+          <view class="age">
+            <picker mode="date" value="{{date}}" class="picker" start="{{time}}" end="" bindchange="bindDateChanged">
+              <text class="tiome tit">结束日期：</text>
+              <view class="{{isClicked?'txtTime':'nowtime'}}" name="date" data-value="{{date}}">{{isClicked?date:'结束日期'}}</view>
+            </picker>
+            <picker mode="time" value="{{time}}" class="picker1" start="00:00" end="23:59" bindchange="bindTimeChanged">
+              <view class="{{istaped?'txtTime':'nowtime'}}" name="time" data-value="{{time}}">{{istaped?time:'结束时间'}}
+              </view>
+            </picker>
+          </view>
+
+          <view class="age"  catchtap='toAddMap'>
+            <text class="tit" decode="{{true}}" space="{{true}}">地 &nbsp;&nbsp;&nbsp;&nbsp; 点：</text>
+            <view class="addressTex" >
+              <!-- <input name="addr" placeholder='请写详细地址'  style="float:left"></input> -->
+               <view class="addName" name="addr" >{{address?address:'请填写详细地址'}}</view>
+            </view>
+          </view>
+          <view class="age">
+            <text class="tit" decode="{{true}}" space="{{true}}">联系方式：</text>
+            <input name="phone" type="number" maxlength='11'></input>
+          </view>
+          <view class="age">
+            <text class="tit" decode="{{true}}" space="{{true}}">需要人数：</text>
+            <input name="peopleNum" type="number"></input>
+          </view>
+        </view>
+      </view>
+      <!-- 任务佣金 -->
+      <view class='renwubiaoti'>
+        <view class='biaoti'>任务佣金</view>
+        <view class="section">
+          <input type="digit" placeholder="请填写任务佣金" name="shop_price" />
+        </view>
+      </view>
+
+      <!-- 提交 -->
+
+      <button formType="submit" hover-class="btn"> 发布任务</button>
+    </form>
+  </view>
+
+</view>

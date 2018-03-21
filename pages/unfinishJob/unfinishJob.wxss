@@ -1,0 +1,187 @@
+/* pages/jishirenwuDetail/jishirenwuDetail.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+/* 内容 */
+
+.neirong {
+  background: #fff;
+  border-radius: 20rpx;
+  width: 100%;
+  margin-top: 22rpx;
+  box-shadow: 0rpx 5rpx 5rpx #ddd;
+  box-sizing: border-box;
+  padding: 0 18rpx;
+}
+
+.name {
+  font-size: 28rpx;
+  color: #3d3d3d;
+  display: block;
+  line-height: 55rpx;
+  font-weight: 900;
+}
+
+.textCent {
+  font-size: 24rpx;
+  color: #333;
+  display: block;
+  line-height: 43rpx;
+  padding-bottom: 17rpx;
+}
+
+.list {
+  font-size: 24rpx;
+  color: #333;
+  display: block;
+  line-height: 43rpx;
+}
+
+.address {
+  font-size: 24rpx;
+  color: #333;
+  display: block;
+  height: 43rpx;
+  line-height: 43rpx;
+  padding-bottom: 17rpx;
+}
+
+.list2 {
+  float: left;
+}
+
+.iconfont {
+  width: 22rpx;
+  height: 28rpx;
+  float: left;
+  padding-top: 7rpx;
+  padding-left: 10rpx;
+}
+
+.state {
+  width: 100%;
+  margin-top: 47rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #ff4d4d;
+  font-weight: 900;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.idTit {
+  width: 100%;
+  padding-left: 10rpx;
+  line-height: 58rpx;
+  font-size: 28rpx;
+  color: #404042;
+  text-align: left;
+}
+
+.box1 {
+  width: 100%;
+  height: 300rpx;
+  border: 1px solid #bcbcbc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.box2 {
+  width: 100%;
+  text-align: center;
+}
+
+.box1 image {
+  width: 78rpx;
+  height: 78rpx;
+  /* display:block;   */
+}
+
+.box1 text {
+  line-height: 58rpx;
+  height: 58rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.btm {
+  width: 100%;
+  height: 80rpx;
+}
+
+.btm button {
+  width: 40%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  color: #fff;
+  float: left;
+  line-height: 80rpx;
+  background: #ff6490;
+  font-weight: 100;
+}
+
+.btm button:nth-of-type(2) {
+  float: right;
+}
+
+.btn {
+  background: #f695b0;
+  color: #f5f5f5;
+}
+
+.tupian {
+  margin: 10rpx 0;
+  width: 100%;
+  height: 300rpx;
+  border: 1px solid #aaa;
+}
+
+.tu_list {
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+}
+
+.tu_list image {
+  height: 300rpx;
+  display: block;
+}
+
+.textArea {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.textArea button {
+  margin-top: 20rpx;
+}
+
+.text {
+  width: 90%;
+  height: 300rpx;
+  background: #fff;
+  margin: 30% 5% 0;
+  background: #fff;
+  color: #818181;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+}

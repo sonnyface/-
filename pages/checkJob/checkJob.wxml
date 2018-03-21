@@ -1,0 +1,154 @@
+<!--pages/accpetjob/accpetjob.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="list {{currentIndex==0?'on':''}}" data-index="0" bindtap="changTasp">待审核</view>
+    <view class="list {{currentIndex==3?'on':''}}" data-index="3" bindtap="changTasp">未通过</view>
+    <view class="list {{currentIndex==4?'on':''}}" data-index="4" bindtap="changTasp">已通过</view>
+
+  </view>
+
+  <!-- 待审核 -->
+  <view class="tapList" wx:if="{{currentIndex==0}}">
+    <view class='yiwancheng'>
+      <view class='jinji'>
+        <!-- 任务 -->
+        <view class='renwu_list'>
+          <view class='time'>任务列表</view>
+          <view class='neirong'>
+            <!-- 内容1 -->
+            <view class='neirong_list' bindtap="toDetail" data-title="待审核" wx:for="{{noCheck}}" wx:key="{{item.goods_id}}" data-id="{{item.order_id}}">
+              <view class='rong_top'>
+                <view class='name'>{{item.goods_name}}</view>
+                <view class='num'>{{item.click_count}}人看过</view>
+              </view>
+              <view class='dizhi'>
+                <view class='dizhi_left'>
+                  <view class="address">
+                    <image class="iconfont" src="../../image/add.png"> </image>
+                    <text class=" list2">{{item.addr}}</text>
+                  </view>
+                  <view>{{item.name}}</view>
+                </view>
+                <view wx:if="{{item.pay_status==3}}" class='dizhi_right'>取消</view>
+                <view wx:else class='dizhi_right'>待审核</view>
+
+              </view>
+              <view class='rong_boot'>
+                <view class='boot_left'>
+                  <view>
+                    <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                  </view>
+                 <view wx:if="{{item.addr.length<=0}}"></view>
+                  <view wx:else>还需{{item.need_people}}人</view>
+                </view>
+                <view class='boot_right'>{{item.on_time}}</view>
+              </view>
+            </view>
+            <!-- 内容1结束 -->
+          </view>
+        </view>
+        <!-- 任务结束 -->
+
+
+      </view>
+    </view>
+  </view>
+  <!-- 未通过 -->
+  <view class="tapList" wx:if="{{currentIndex==3}}">
+    <view class='yiwancheng'>
+      <view class='jinji'>
+        <!-- 任务 -->
+        <view class='renwu_list'>
+          <view class='time'>任务列表</view>
+          <view class='neirong'>
+            <!-- 内容1 -->
+            <view class='neirong_list' bindtap='checkNopass' data-title="未通过" wx:for="{{noPass}}" wx:key="{{item.goods_id}}" data-id="{{item.order_id}}">
+              <view class='rong_top'>
+                <view class='name'>{{item.goods_name}}</view>
+                <view class='num'>{{item.click_count}}人看过</view>
+              </view>
+              <view class='dizhi'>
+                <view class='dizhi_left'>
+                  <view class="address">
+                    <image class="iconfont" src="../../image/add.png"> </image>
+                    <text class=" list2">{{item.addr}}</text>
+                  </view>
+                  <view>{{item.name}}</view>
+                </view>
+                <view class='dizhi_right' style="background:#aaa;">未通过</view>
+              </view>
+              <view class='rong_boot'>
+                <view class='boot_left'>
+                  <view>
+                    <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                  </view>
+                  <view wx:if="{{item.addr.length<=0}}"></view>
+                  <view wx:else>还需{{item.need_people}}人</view>
+                </view>
+                <view class='boot_right'>{{item.on_time}}</view>
+              </view>
+            </view>
+            <!-- 内容1结束 -->
+
+          </view>
+        </view>
+        <!-- 任务结束 -->
+
+
+      </view>
+    </view>
+  </view>
+  <!-- 已通过 -->
+  <view class="tapList" wx:if="{{currentIndex==4}}">
+    <view class='yiwancheng'>
+      <view class='jinji'>
+        <!-- 任务 -->
+        <view class='renwu_list'>
+          <view class='time'>任务列表</view>
+          <view class='neirong'>
+            <!-- 内容1 -->
+            <view class='neirong_list' bindtap="toDetail" data-title="已通过" wx:for="{{doneCheck}}" wx:key="{{item.goods_id}}" data-id="{{item.order_id}}">
+              <view class='rong_top'>
+                <view class='name'>{{item.goods_name}}</view>
+                <view class='num'>{{item.click_count}}人看过</view>
+              </view>
+              <view class='dizhi'>
+                <view class='dizhi_left' wx:if="{{item.addr.length<=0}}">
+                  <view style="padding-left:0">面对面任务</view>
+                </view>
+                <view class='dizhi_left' wx:else>
+                  <view class="address">
+                    <image class="iconfont" src="../../image/add.png"> </image>
+                    <text class=" list2">{{item.addr}}</text>
+                  </view>
+                  <view>{{item.name}}</view>
+                </view>
+                <view wx:if="{{item.pay_status==0}}" class='dizhi_right' catchtap='jilizhifu' data-id="{{item.order_id}}">立即支付</view>
+                <view wx:if="{{item.pay_status==1}}" class='dizhi_right'  data-id="{{item.order_id}}" style="background:#aaa;">已支付</view>
+              </view>
+              <view class='rong_boot'>
+                <view class='boot_left'>
+                  <view>
+                    <text style='color:#ff3535;'>{{item.shop_price}}</text> 元/人
+                  </view>
+                  <view wx:if="{{item.addr.length<=0}}"></view>
+                  <view wx:else>还需{{item.need_people}}人</view>
+                </view>
+                <view class='boot_right'>{{item.on_time}}</view>
+              </view>
+            </view>
+            <!-- 内容1结束 -->
+
+          </view>
+        </view>
+        <!-- 任务结束 -->
+
+
+      </view>
+    </view>
+  </view>
+
+
+
+
+</view>

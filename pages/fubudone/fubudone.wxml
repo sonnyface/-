@@ -1,0 +1,51 @@
+<!--pages/jishirenwuDetail/jishirenwuDetail.wxml-->
+<view class="container">
+  <!-- 内容1 -->
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务标题</text>
+      <text class="textCent">{{list.goods_name}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务内容</text>
+      <text class="textCent">{{list.goods_content}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+  <view class='neirong' wx:if="{{list.age}}">
+    <view class='neirong_list'>
+      <text class='name'>任务要求</text>
+      <text class="list">年龄：{{list.age}}</text>
+      <text class="list">联系方式：{{list.spu}}</text>
+      <text class="list">时间：{{list.start_time}} - {{list.end_time}}</text>
+      <view class="address"  bindtap="addMap" data-add="{{detaiLis.addr}}">
+        <text class="list list2">地点：{{list.addr}}</text>
+        <image class="iconfont" src="../../image/add.png"> </image>
+      </view>
+    </view>
+  </view>
+  <view class='neirong' wx:if="{{list.age}}">
+    <view class='neirong_list'>
+      <text class='name'>佣兵信息</text>
+      <text class="list">姓名：{{list.user_name}}</text>
+      <text class="list">性别：{{list.sex==1?'男':'女'}}</text>
+      <text class="list">联系方式：{{list.mobile}}</text>
+      <text class="list">任务领取时间：{{list.add_time}}</text>
+      <text class="list">任务结束时间：{{list.f_time}}</text>
+    </view>
+  </view>
+  <!-- 内容1结束 -->
+  <!-- 内容1 -->
+
+  <view class='neirong'>
+    <view class='neirong_list'>
+      <text class='name'>任务佣金</text>
+      <text class="textCent" style="color:red;">¥{{list.shop_price}}</text>
+    </view>
+  </view>
+</view>
